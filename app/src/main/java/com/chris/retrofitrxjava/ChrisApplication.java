@@ -15,7 +15,7 @@ import java.io.File;
  * Created by Chris on 2017/12/13.
  */
 
-public class ChirsApplication extends Application {
+public class ChrisApplication extends Application {
 
     private static Context mContext;
 
