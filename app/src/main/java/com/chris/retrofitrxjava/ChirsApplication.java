@@ -46,5 +46,4 @@ public class ChirsApplication extends Application {
         return mContext;
     }
 
-
 }
