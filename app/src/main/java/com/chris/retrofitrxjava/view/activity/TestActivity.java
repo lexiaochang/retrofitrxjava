@@ -34,7 +34,7 @@ private static String TAG = "TestActivity";
             }
         });
         mTestPresenter = new TestPresenter(this);
-        mTestPresenter.getList("1");
+        mTestPresenter.getList("2");
     }
 
     @Override
