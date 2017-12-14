@@ -1,4 +1,4 @@
-package com.chris.retrofitrxjava.view;
+package com.chris.retrofitrxjava.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,8 +16,6 @@ import com.chris.retrofitrxjava.base.BaseActivity;
 public class MainActivity extends BaseActivity{
 
     private TextView mTv;
-    private TextView mTv1;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,12 +28,6 @@ public class MainActivity extends BaseActivity{
                 startActivity(new Intent(MainActivity.this,TestActivity.class));
             }
         });
-        mTv1 = (TextView) findViewById(R.id.tv1);
-        mTv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,GankActivity.class));
-            }
-        });
+
     }
 }

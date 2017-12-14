@@ -23,7 +23,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        CommonAction.getInstance().addActivity(this);
         if(sCompositeSubscription == null || sCompositeSubscription.isUnsubscribed()){
             sCompositeSubscription = new CompositeSubscription();
         }

@@ -2,7 +2,7 @@ package com.chris.retrofitrxjava.loader;
 
 import com.chris.retrofitrxjava.bean.DataMapBean;
 import com.chris.retrofitrxjava.common.IApiService;
-import com.chris.retrofitrxjava.http.BaseResponse;
+import com.chris.retrofitrxjava.base.BaseResponse;
 import com.chris.retrofitrxjava.http.ObjectLoader;
 import com.chris.retrofitrxjava.http.PayLoad;
 import com.chris.retrofitrxjava.http.RetrofitServiceManager;

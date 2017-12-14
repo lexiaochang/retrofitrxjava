@@ -1,4 +1,4 @@
-package com.chris.retrofitrxjava.http;
+package com.chris.retrofitrxjava.base;
 
 /**
  * Created by Chris on 2017/12/13.
@@ -18,6 +18,7 @@ public class BaseResponse<T> {
     private int    status;
 
     private T dataMap;
+
     public boolean isSuccess(){
         return status == 200;
     }
