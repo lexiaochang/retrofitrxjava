@@ -1,6 +1,7 @@
 package com.chris.retrofitrxjava.http;
 
 import com.chris.retrofitrxjava.common.ApiConfig;
+import com.chris.retrofitrxjava.common.IApiService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,6 +41,7 @@ public class RetrofitServiceManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(ApiConfig.BASE_URL)
                 .build();
+
     }
 
     private static class SingletonHolder{
@@ -50,17 +52,24 @@ public class RetrofitServiceManager {
      * 获取RetrofitServiceManager
      * @return
      */
-    public static RetrofitServiceManager getInstance(){
-        return SingletonHolder.INSTANCE;
+//    public static RetrofitServiceManager getInstance(){
+//        return SingletonHolder.INSTANCE;
+//    }
+    private static RetrofitServiceManager  instance;
+    public static synchronized RetrofitServiceManager getInstance() {
+        if (instance == null)
+            instance = new RetrofitServiceManager();
+        return instance;
     }
 
     /**
      * 获取对应的Service
-     * @param service Service 的 class
-     * @param <T>
+     * @param
+     * @param
      * @return
      */
-    public <T> T create(Class<T> service){
-        return mRetrofit.create(service);
+    public IApiService create(){
+        IApiService iApiService = mRetrofit.create(IApiService.class);
+        return iApiService;
     }
 }

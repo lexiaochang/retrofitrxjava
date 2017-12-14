@@ -1,17 +1,13 @@
 package com.chris.retrofitrxjava.loader;
 
 import com.chris.retrofitrxjava.bean.Movie;
+import com.chris.retrofitrxjava.common.IApiService;
 import com.chris.retrofitrxjava.http.ObjectLoader;
 import com.chris.retrofitrxjava.http.RetrofitServiceManager;
 import com.chris.retrofitrxjava.resp.MovieSubject;
 
 import java.util.List;
 
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
 import rx.Observable;
 import rx.functions.Func1;
 
@@ -20,10 +16,11 @@ import rx.functions.Func1;
  */
 
 public class MovieLoader extends ObjectLoader {
-    private MovieService mMovieService;
+
+    private final IApiService mIApiService;
 
     public MovieLoader(){
-        mMovieService = RetrofitServiceManager.getInstance().create(MovieService.class);
+        mIApiService = RetrofitServiceManager.getInstance().create();
     }
 
     /**
@@ -33,7 +30,7 @@ public class MovieLoader extends ObjectLoader {
      * @return
      */
     public Observable<List<Movie>> getMovie(int start, int count){
-        return observe(mMovieService.getTop250(start,count))
+        return observe(mIApiService.getTop250(start,count))
                 .map(new Func1<MovieSubject, List<Movie>>() {
                     @Override
                     public List<Movie> call(MovieSubject movieSubject) {
@@ -43,24 +40,11 @@ public class MovieLoader extends ObjectLoader {
     }
 
     public Observable<String> getWeatherList(String cityId,String key){
-        return observe(mMovieService.getWeather(cityId,key)).map(new Func1<String, String>() {
+        return observe(mIApiService.getWeather(cityId,key)).map(new Func1<String, String>() {
             @Override
             public String call(String s) {
                 return null;
             }
         });
-    }
-
-
-    public interface MovieService{
-
-        //获取豆瓣Top250 榜单
-        @GET("top250")
-        Observable<MovieSubject> getTop250(@Query("start") int start, @Query("count")int count);
-
-        @FormUrlEncoded
-        @POST("/x3/weather")
-        Observable<String> getWeather(@Field("cityId") String cityId, @Field("key") String key);
-
     }
 }

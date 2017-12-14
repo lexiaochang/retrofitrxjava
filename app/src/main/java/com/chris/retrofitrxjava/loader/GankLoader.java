@@ -1,14 +1,13 @@
 package com.chris.retrofitrxjava.loader;
 
 import com.chris.retrofitrxjava.bean.GankEntry;
+import com.chris.retrofitrxjava.common.IApiService;
 import com.chris.retrofitrxjava.http.ObjectLoader;
 import com.chris.retrofitrxjava.http.RetrofitServiceManager;
 import com.chris.retrofitrxjava.resp.GankResp;
 
 import java.util.List;
 
-import retrofit2.http.GET;
-import retrofit2.http.Url;
 import rx.Observable;
 import rx.functions.Func1;
 
@@ -18,9 +17,9 @@ import rx.functions.Func1;
 
 public class GankLoader extends ObjectLoader {
     private static final String GANK_URL = "http://gank.io/api/data/福利/50/1";
-    private GankService mGankService ;
+    private IApiService mGankService ;
     public GankLoader(){
-        mGankService = RetrofitServiceManager.getInstance().create(GankService.class);
+        mGankService = RetrofitServiceManager.getInstance().create();
     }
 
     /**
@@ -36,16 +35,4 @@ public class GankLoader extends ObjectLoader {
         });
     }
 
-
-    public interface GankService{
-        /**
-         *
-         * @param url
-         * @param
-         * @param
-         * @return
-         */
-        @GET
-        Observable<GankResp> getGank(@Url String url/*, @Path("count")int count,@Path("page")int page*/);
-    }
 }
