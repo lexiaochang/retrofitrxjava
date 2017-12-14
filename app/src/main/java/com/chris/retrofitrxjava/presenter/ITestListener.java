@@ -6,5 +6,5 @@ package com.chris.retrofitrxjava.presenter;
 
 public interface ITestListener {
     void onSuccess(String msg);
-    void onError(String code);
+    void onError(int code);
 }

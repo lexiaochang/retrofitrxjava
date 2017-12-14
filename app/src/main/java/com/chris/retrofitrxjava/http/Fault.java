@@ -6,7 +6,7 @@ package com.chris.retrofitrxjava.http;
  */
 
 public class Fault extends RuntimeException {
-    private int mErrorCode;
+    public int mErrorCode;
 
     public Fault(int errorCode,String message){
         super(message);

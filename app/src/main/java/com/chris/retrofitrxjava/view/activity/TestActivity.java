@@ -43,7 +43,7 @@ private static String TAG = "TestActivity";
     }
 
     @Override
-    public void onError(String code) {
-        Toast.makeText(this,code,Toast.LENGTH_SHORT).show();
+    public void onError(int code) {
+        Toast.makeText(this,code+"",Toast.LENGTH_SHORT).show();
     }
 }

@@ -32,7 +32,7 @@ public class TestModel extends ObjectLoader implements ITestModel {
                 .subscribe(new Action1<DataMapBean>() {
                     @Override
                     public void call(DataMapBean movies) {
-                        mITestListener.onSuccess(movies.getName()+"===="+movies.getAge());
+                        mITestListener.onSuccess(movies.getName() + "====" + movies.getAge());
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -40,7 +40,8 @@ public class TestModel extends ObjectLoader implements ITestModel {
                         Log.e("====", "error message:" + throwable.getMessage());
                         if (throwable instanceof Fault) {
                             Fault fault = (Fault) throwable;
-                            mITestListener.onError(fault.getMessage());
+                            Log.e("====", "error message:" + fault.getErrorCode());
+                            mITestListener.onError(fault.getErrorCode());
                         }
                     }
                 });

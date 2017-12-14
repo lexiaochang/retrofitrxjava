@@ -29,7 +29,7 @@ public class TestPresenter implements ITestListener {
     }
 
     @Override
-    public void onError(String code) {
+    public void onError(int code) {
         mITestView.onError(code);
     }
 

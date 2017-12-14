@@ -6,5 +6,5 @@ package com.chris.retrofitrxjava.view;
 
 public interface ITestView {
     void onSuccess(String msg);
-    void onError(String code);
+    void onError(int code);
 }

@@ -18,13 +18,17 @@ import rx.functions.Func1;
 public class PayLoad<T> implements Func1<BaseResponse<T>, T> {
     @Override
     public T call(BaseResponse<T> tBaseResponse) {//获取数据失败时，包装一个Fault 抛给上层处理错误
+        System.out.println("======111 2" +tBaseResponse.getStatus());
+        System.out.println("======111 1" +tBaseResponse.getMessage());
+
         if (tBaseResponse.getStatus() == 1001) {
             Context appContext = ChirsApplication.getAppContext();
             Intent intent = new Intent(appContext, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             appContext.startActivity(new Intent(appContext, LoginActivity.class));
             CommonAction.getInstance().OutSign();
-        } else if (!tBaseResponse.isSuccess()) {
+        } else
+            if (!tBaseResponse.isSuccess()) {
             throw new Fault(tBaseResponse.getStatus(), tBaseResponse.getMessage());
         }
         return tBaseResponse.getDataMap();
