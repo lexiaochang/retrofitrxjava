@@ -29,6 +29,7 @@ private static String TAG = "TestActivity";
             @Override
             public void call(DataMapBean movies) {
                 Log.e(TAG,"movies message:"+movies.getName());
+                Log.e(TAG,"movies message:"+movies.getAge());
 
             }
         }, new Action1<Throwable>() {
