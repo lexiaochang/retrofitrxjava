@@ -27,7 +27,7 @@ public class MainActivity extends BaseActivity{
         mTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,MovieActivity.class));
+                startActivity(new Intent(MainActivity.this,TestActivity.class));
             }
         });
         mTv1 = (TextView) findViewById(R.id.tv1);

@@ -1,5 +1,7 @@
 package com.chris.retrofitrxjava.common;
 
+import com.chris.retrofitrxjava.bean.DataMapBean;
+import com.chris.retrofitrxjava.http.BaseResponse;
 import com.chris.retrofitrxjava.resp.GankResp;
 import com.chris.retrofitrxjava.resp.MovieSubject;
 
@@ -28,6 +30,9 @@ public interface IApiService {
     @GET
     Observable<GankResp> getGank(@Url String url/*, @Path("count")int count,@Path("page")int page*/);
 
+    @FormUrlEncoded
+    @POST("autoincrement/selectdata")
+    Observable<BaseResponse<DataMapBean>> getList(@Field("id") String id);
 
 
 }

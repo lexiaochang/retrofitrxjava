@@ -6,12 +6,44 @@ package com.chris.retrofitrxjava.http;
  */
 
 public class BaseResponse<T> {
-    public int status;
-    public String message;
 
-    public T data;
 
+    /**
+     * dataMap : {"name":"666","age":26}
+     * message : 成功
+     * status : 200
+     */
+
+    private String message;
+    private int    status;
+
+    private T dataMap;
     public boolean isSuccess(){
         return status == 200;
+    }
+
+
+    public T getDataMap() {
+        return dataMap;
+    }
+
+    public void setDataMap(T dataMap) {
+        this.dataMap = dataMap;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

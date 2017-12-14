@@ -6,5 +6,6 @@ package com.chris.retrofitrxjava.common;
  */
 
 public class ApiConfig {
-    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
+    public static final String BASE_URL = "http://111.231.82.222:8080/";
+//    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
 }
