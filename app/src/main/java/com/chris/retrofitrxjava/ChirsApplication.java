@@ -45,4 +45,5 @@ public class ChirsApplication extends Application {
     public static Context getAppContext() {
         return mContext;
     }
+
 }
