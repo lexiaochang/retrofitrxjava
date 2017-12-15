@@ -1,5 +1,6 @@
 package com.chris.retrofitrxjava.http;
 
+
 import com.chris.retrofitrxjava.common.ApiConfig;
 import com.chris.retrofitrxjava.common.IApiService;
 
@@ -44,9 +45,9 @@ public class RetrofitServiceManager {
 
     }
 
-    private static class SingletonHolder{
-        private static final RetrofitServiceManager INSTANCE = new RetrofitServiceManager();
-    }
+//    private static class SingletonHolder{
+//        private static final RetrofitServiceManager INSTANCE = new RetrofitServiceManager();
+//    }
 
     /**
      * 获取RetrofitServiceManager

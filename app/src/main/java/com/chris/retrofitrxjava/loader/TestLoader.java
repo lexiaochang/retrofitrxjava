@@ -1,8 +1,9 @@
 package com.chris.retrofitrxjava.loader;
 
+
+import com.chris.retrofitrxjava.base.BaseResponse;
 import com.chris.retrofitrxjava.bean.DataMapBean;
 import com.chris.retrofitrxjava.common.IApiService;
-import com.chris.retrofitrxjava.base.BaseResponse;
 import com.chris.retrofitrxjava.http.ObjectLoader;
 import com.chris.retrofitrxjava.http.PayLoad;
 import com.chris.retrofitrxjava.http.RetrofitServiceManager;
@@ -18,7 +19,7 @@ public class TestLoader extends ObjectLoader {
     private final IApiService mIApiService;
 
     public TestLoader(){
-        mIApiService = RetrofitServiceManager.getInstance().create();
+        mIApiService =RetrofitServiceManager.getInstance().create();
     }
 
     public Observable<DataMapBean> getList(String id){
