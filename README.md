@@ -10,5 +10,5 @@ allprojects {
 	}
 
 dependencies {
-	        compile 'com.github.lexiaochang:retrofitrxjava:v1.0.8'
+	        compile 'com.github.lexiaochang:retrofitrxjava:v1.1.0'
 	}
