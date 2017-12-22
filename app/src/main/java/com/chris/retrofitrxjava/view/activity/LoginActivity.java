@@ -1,7 +1,7 @@
 package com.chris.retrofitrxjava.view.activity;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import com.chris.retrofitrxjava.R;
 import com.chris.retrofitrxjava.base.BaseActivity;
@@ -12,8 +12,10 @@ import com.chris.retrofitrxjava.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity {
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        DataBindingUtil.setContentView(LoginActivity.this,R.layout.activity_login);
+
+
     }
 }
